@@ -69,4 +69,5 @@ TODO 8/29/2018:
     1. Find a solution to cloneNode v clone()
     2. Find a solution for iterative numbers in the cache name
     3. Make code more concise
+    4. IMPORTANT: fix refresh bug (Requires 3 refreshes on average to fully cache a page...)
 */
