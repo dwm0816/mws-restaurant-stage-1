@@ -13,7 +13,10 @@ self.addEventListener('install', function(event){
                       'js/main.js',
                       'js/dbhelper.js',
                       'js/restaurant_info.js',
-                      'img/*.jpg'
+                      'img/*.jpg',
+                      'https://code.jquery.com/jquery-3.3.1.min.js',
+                      '//normalize-css.googlecode.com/svn/trunk/normalize.css',
+                      'https://unpkg.com/leaflet@1.3.1/dist/leaflet.css'
                   ])
                   .catch(function(err){console.log('Error: "' + err + '"')});
               })
@@ -38,7 +41,6 @@ self.addEventListener('fetch', function(event){
         caches.match(event.request)
               .then(
                   function(response){
-                      console.log(response + ' sporks');
                       if (response !== undefined){
                           return response;
                       } else {
@@ -55,3 +57,16 @@ self.addEventListener('fetch', function(event){
     )
 })
 
+
+/*
+CITATIONS: 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions - Arrow function refresh
+https://developer.mozilla.org/en-US/docs/Web/API/Node/cloneNode - cloneNode, unused but attempted
+https://api.jquery.com/clone/ - clone, the used solution to replace cloneNode.. for now
+Udacity service worker course was reviewed for most of the techniques used within
+
+TODO 8/29/2018:
+    1. Find a solution to cloneNode v clone()
+    2. Find a solution for iterative numbers in the cache name
+    3. Make code more concise
+*/
